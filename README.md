@@ -1,5 +1,5 @@
 # EquipoMintic
-Grupo desarrollo proyecto ciclo 3
+Grupo desarrollo proyecto ciclo 3 Programa ventas online
 
 
 # Integrantes Grupo MinTech.3
