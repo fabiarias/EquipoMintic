@@ -4,24 +4,24 @@ Grupo desarrollo proyecto ciclo 3
 
 # Integrantes
 
-## JHONATHAN MEJIA LEON
+## Jhonathan Mejia Leon
 ROL: Desarrollador
-DESCRIPCIÓN: Estudiante de Ingeniería de Sistemas
+DESCRIPCIÓN: Estudiante MINTIC
 
 ## Armando Valencia Monsalve 
 ROL Scrum master
-DESCRIPCIÓN: Estudiante de Ingeniería de Sistemas
+DESCRIPCIÓN: Estudiante MINTIC
 
 ## Julián Camilo Escobar 
 ROL administrador BD
-DESCRIPCIÓN: Estudiante de Ingeniería de Sistemas
+DESCRIPCIÓN: Estudiante MINTIC
 
 ## Wilson Suárez Velasco 
 ROL Product owner
-DESCRIPCIÓN: Estudiante de Ingeniería de Sistemas
+DESCRIPCIÓN: Estudiante MINTIC
 
 ## Fabian arias Muñoz  
 ROL Analista
-DESCRIPCIÓN: Estudiante de Ingeniería de Sistemas
+DESCRIPCIÓN: Estudiante MINTIC
 
 
