@@ -2,7 +2,8 @@
 Grupo desarrollo proyecto ciclo 3
 
 
-# Integrantes
+# Integrantes Grupo MinTech.3
+# Sprint No. 1
 
 ## Jhonathan Mejia Leon
 ROL: Desarrollador
