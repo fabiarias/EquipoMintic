@@ -10,9 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 //ROUTES
-//app.get('/api/users',(req,res)=>res.send('Users Routes'))
-//app.get('/api/facturas',(req,res)=>res.send('Facturas Routes'))
-app.use('/api/users',require('./routes/users'))
-app.use('/api/facturas', require('./routes/facturas'))
+
+app.use('/api/users',require('./routes/usersRoute'))
+app.use('/api/facturas', require('./routes/facturasRoute'))
+app.use('/api/productos', require('./routes/productosRoute'))
+
 
 module.exports=app;

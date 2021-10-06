@@ -10,7 +10,8 @@ const usersDchema= new Schema({
     login:String,
     nombres:String,
     clave:String,
+    email:String,
     perfil:String
 })
 
-module.exports=model('userModel',usersDchema)
+module.exports=model('User',usersDchema)
