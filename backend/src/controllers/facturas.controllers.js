@@ -42,7 +42,7 @@ facturasCTRL.createFactura=async(req,res)=>{
 
 facturasCTRL.updateFactura=async(req,res)=>{
     const{idfactura,fecha,identificacion,nombre,direccion,telefono,idproducto,cantidad,precio,vendedor}=req.body;
-    await facturasModel.findByIdAndUpdate(req.params.id,{
+    await Facturas.findByIdAndUpdate(req.params.id,{
         idfactura:idfactura,
         fecha:fecha,
         identificacion:identificacion,

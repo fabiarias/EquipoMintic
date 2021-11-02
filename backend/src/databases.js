@@ -16,5 +16,5 @@ mongoose.connect(URI,{
 const connection=mongoose.connection;
 
 connection.once('open',()=>{
-    console.log('DB is Connected');
+    console.log('DB Atlas is Connected');
 });

@@ -1,4 +1,5 @@
 const userCtrl = {};
+const userModel = require("../models/productosModel");
 const User = require("../models/userModel");
 
 userCtrl.getUsers = async (req, res) => {
@@ -54,13 +55,14 @@ userCtrl.deleteUser=async(req,res)=>{
 }
 
 userCtrl.updateUser=async(req,res)=>{
-    const{login,nombres,clave,email,perfil}=req.body;
-    await userModel.findByIdAndUpdate(req.params.id,{
+    const{identificacion,login,nombres,clave,email,perfil}=req.body;
+    await User.findByIdAndUpdate(req.params.id,{
+        identificacion:identificacion,
         login:login,
         nombres:nombres,
         clave:clave,
         email:email,
-        perfil:perfil
+        perfil:perfil,
     });
      res.json({message: ' Usuario Actualizado Exitosamente'})
 }
