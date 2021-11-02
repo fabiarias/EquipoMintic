@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useHistory } from "react-router";
+import { getAuth } from "firebase/auth";
+
 
 export default class ProductosCrear extends Component {
 
@@ -9,8 +13,13 @@ export default class ProductosCrear extends Component {
         nombreproducto: '',
         costo: '',
         isediting:false,
-        _id:''
+        _id:'',
+        productoBackup:[],
+        textoBuscar:''
     }
+    
+
+    
 
     async componentDidMount() {
         this.getProductos();
@@ -18,7 +27,9 @@ export default class ProductosCrear extends Component {
 
     async getProductos() {
         const res = await axios.get('http://localhost:4000/api/productos');
-        this.setState({ productos: res.data });
+        this.setState({ 
+            productos: res.data,
+            productoBackup:res.data });
     }
 
 
@@ -65,6 +76,32 @@ export default class ProductosCrear extends Component {
         this.setState({costo:res.data.costo});
         this.setState({isediting:true});
         this.setState({_id:id});
+    }
+   /* handleChange =e=>{
+        this.setState({
+            [e.target.id]: e.target.value,
+            [e.target.nombreProducto]:e.target.value
+        })
+        console.log("Busqueda: " +e.target.value)
+    }*/
+
+    filter(event){
+
+        var text=(event.target.value);
+        const data=this.state.productoBackup;
+
+        const newData=data.filter(function(item){
+            const itemIDproducto=item.idproducto
+            const itemNombre=item.nombreProducto.toUpperCase()
+
+            const itemData=itemIDproducto+" " + itemNombre.toUpperCase()
+            const textData=text.toUpperCase()
+            return itemData.indexOf(textData)>-1
+        })
+        this.setState({
+            productos:newData,
+            textoBuscar:text,
+        })
     }
 
 
@@ -117,6 +154,16 @@ export default class ProductosCrear extends Component {
                         </div>
                     </div>
                     <div className="-col-md-9">
+                        <div className="card-header">
+                            <input type="search" className="form-form-control"
+                            placeholder="Busqueda por ID o Nombre de producto"
+                            name="busqueda" id="busqueda" value={this.state.text}
+                            //onChange={e=>setTerm(e.target.value)}
+                            onChange={ (text)=>this.filter(text)}
+                            size="100"
+                            />
+
+                        </div>
                         <table className="table table-bordered">
                             <thead className="table-dark">
                                 <tr >

@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useHistory } from "react-router";
+import { getAuth } from "firebase/auth";
+
 export default class UsuariosCrear extends Component {
 
     state = {
@@ -44,6 +48,7 @@ export default class UsuariosCrear extends Component {
         };
         if(this.state.isediting){
             await axios.put('http://localhost:4000/api/users/'  + this.state._id, newUser)
+           
         }
         else{
             await axios.post('http://localhost:4000/api/users', newUser)

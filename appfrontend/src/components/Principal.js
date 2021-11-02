@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import logo from '../Arquitectura.png';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useHistory } from "react-router";
+import { getAuth } from "firebase/auth";
 
 
 export default class Principal extends Component {
+    
+
     render() {
         return (
             <div>
